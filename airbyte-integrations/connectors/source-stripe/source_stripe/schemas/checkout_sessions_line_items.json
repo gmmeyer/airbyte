@@ -10,6 +10,9 @@
     "amount_total": { "type": ["null", "integer"] },
     "currency": { "type": ["null", "string"] },
     "description": { "type": ["null", "string"] },
+    "org_id": {
+      "type": ["string"]
+    },
     "discounts": {
       "type": ["null", "array"],
       "items": {

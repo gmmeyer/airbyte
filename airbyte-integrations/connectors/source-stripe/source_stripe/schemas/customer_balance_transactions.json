@@ -5,6 +5,9 @@
     "id": {
       "type": ["null", "string"]
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "object": {
       "type": ["null", "string"]
     },

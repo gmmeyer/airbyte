@@ -5,6 +5,9 @@
       "type": ["null", "object"],
       "properties": {}
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "fraud_details": {
       "type": ["null", "object"],
       "properties": {

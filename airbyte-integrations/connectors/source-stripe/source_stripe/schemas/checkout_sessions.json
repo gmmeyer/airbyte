@@ -3,6 +3,9 @@
   "type": ["null", "object"],
   "properties": {
     "id": { "type": ["null", "string"] },
+    "org_id": {
+      "type": ["string"]
+    },
     "object": { "type": ["null", "string"] },
     "after_expiration": {
       "type": ["null", "object"],

@@ -8,6 +8,9 @@
       "type": ["null", "object"],
       "properties": {}
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "id": {
       "type": ["null", "string"]
     },

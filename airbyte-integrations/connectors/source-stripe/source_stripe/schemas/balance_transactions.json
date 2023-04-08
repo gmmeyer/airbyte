@@ -10,6 +10,9 @@
     "source": {
       "type": ["null", "string"]
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "fee_details": {
       "type": ["null", "array"],
       "items": {

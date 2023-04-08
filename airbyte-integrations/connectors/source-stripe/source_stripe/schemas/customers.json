@@ -5,6 +5,9 @@
       "type": ["null", "object"],
       "properties": {}
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "preferred_locales": {
       "type": ["null", "array"],
       "items": {
