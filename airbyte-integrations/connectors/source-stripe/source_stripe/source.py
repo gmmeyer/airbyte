@@ -57,6 +57,7 @@ class SourceStripe(AbstractSource):
             "start_date": start_date,
             "slice_range": config.get("slice_range"),
             "org_id": config.get("org_id"),
+            "bearworks_source_id": config.get("bearworks_source_id"),
         }
         incremental_args = {**args, "lookback_window_days": config.get("lookback_window_days")}
         return [

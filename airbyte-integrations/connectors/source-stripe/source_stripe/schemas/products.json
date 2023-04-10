@@ -19,6 +19,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "caption": {
       "type": ["null", "string"]
     },

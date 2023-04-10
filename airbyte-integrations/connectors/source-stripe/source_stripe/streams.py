@@ -27,12 +27,13 @@ class StripeStream(HttpStream, ABC):
     primary_key = "id"
     DEFAULT_SLICE_RANGE = 365
 
-    def __init__(self, start_date: int, account_id: str, org_id: str, slice_range: int = DEFAULT_SLICE_RANGE, **kwargs):
+    def __init__(self, start_date: int, account_id: str, org_id: str, bearworks_source_id: str, slice_range: int = DEFAULT_SLICE_RANGE, **kwargs):
         super().__init__(**kwargs)
         self.account_id = account_id
         self.start_date = start_date
         self.slice_range = slice_range or self.DEFAULT_SLICE_RANGE
         self.org_id = org_id
+        self.bearworks_source_id = bearworks_source_id
 
     def next_page_token(self, response: requests.Response) -> Optional[Mapping[str, Any]]:
         decoded_response = response.json()
@@ -97,7 +98,7 @@ class StripeStream(HttpStream, ABC):
         try:
             for record in super().read_records(sync_mode, cursor_field, stream_slice, stream_state):
                 record['org_id'] = self.org_id
-                self.logger.info(f"here is the org_id: {self.org_id}")
+                record['bearworks_source_id'] = self.bearworks_source_id
                 yield record
         except requests.exceptions.HTTPError as e:
             status_code = e.response.status_code
@@ -207,7 +208,7 @@ class CustomerBalanceTransactions(StripeStream):
     def stream_slices(
         self, *, sync_mode: SyncMode, cursor_field: List[str] = None, stream_state: Mapping[str, Any] = None
     ) -> Iterable[Optional[Mapping[str, Any]]]:
-        parent_stream = Customers(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id)
+        parent_stream = Customers(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id, bearworks_source_id=self.bearworks_source_id)
         slices = parent_stream.stream_slices(sync_mode=SyncMode.full_refresh)
         for _slice in slices:
             for customer in parent_stream.read_records(sync_mode=SyncMode.full_refresh, stream_slice=_slice):
@@ -333,7 +334,7 @@ class StripeSubStream(StripeStream, ABC):
         return params
 
     def get_parent_stream_instance(self):
-        return self.parent(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id)
+        return self.parent(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id, bearworks_source_id=self.bearworks_source_id)
 
     def stream_slices(
         self, *, sync_mode: SyncMode, cursor_field: List[str] = None, stream_state: Mapping[str, Any] = None
@@ -590,7 +591,7 @@ class CheckoutSessionsLineItems(IncrementalStripeStream):
         checkout_session_state = None
         if stream_state:
             checkout_session_state = {"expires_at": stream_state["checkout_session_expires_at"]}
-        checkout_session_stream = CheckoutSessions(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id)
+        checkout_session_stream = CheckoutSessions(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id, bearworks_source_id=self.bearworks_source_id)
         for checkout_session in checkout_session_stream.read_records(
             sync_mode=SyncMode.full_refresh, stream_state=checkout_session_state, stream_slice={}
         ):

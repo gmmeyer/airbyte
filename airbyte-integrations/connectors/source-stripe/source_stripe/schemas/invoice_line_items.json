@@ -10,6 +10,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "invoice_id": {
       "type": ["null", "string"]
     },

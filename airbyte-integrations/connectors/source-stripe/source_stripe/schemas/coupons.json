@@ -8,6 +8,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "times_redeemed": {
       "type": ["null", "integer"]
     },

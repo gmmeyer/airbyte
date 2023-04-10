@@ -8,6 +8,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "canceled_at": {
       "type": ["null", "string"],
       "format": "date-time"

@@ -8,6 +8,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "preferred_locales": {
       "type": ["null", "array"],
       "items": {

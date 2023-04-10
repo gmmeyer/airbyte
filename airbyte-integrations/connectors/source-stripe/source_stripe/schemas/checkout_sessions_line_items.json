@@ -13,6 +13,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "discounts": {
       "type": ["null", "array"],
       "items": {

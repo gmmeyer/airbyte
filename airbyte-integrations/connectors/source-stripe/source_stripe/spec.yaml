@@ -29,6 +29,12 @@ connectionSpecification:
       description: >-
         Bearworks Org ID
       order: 1
+    bearworks_source_id:
+      type: string
+      title: Bearworks Source ID
+      description: >-
+        Bearworks Source ID
+      order: 1
     start_date:
       type: string
       title: Replication start date

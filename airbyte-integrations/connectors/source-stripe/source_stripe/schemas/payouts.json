@@ -7,6 +7,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "failure_code": {
       "type": ["null", "string"]
     },

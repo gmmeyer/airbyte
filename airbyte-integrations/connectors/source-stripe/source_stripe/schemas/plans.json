@@ -63,6 +63,9 @@
     "org_id": {
       "type": ["string"]
     },
+    "bearworks_source_id": {
+      "type": ["string"]
+    },
     "usage_type": {
       "type": ["null", "string"]
     },
