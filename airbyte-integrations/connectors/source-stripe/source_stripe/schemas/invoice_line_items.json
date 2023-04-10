@@ -7,6 +7,9 @@
     "invoice": {
       "type": ["null", "string"]
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "invoice_id": {
       "type": ["null", "string"]
     },

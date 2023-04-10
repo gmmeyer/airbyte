@@ -8,6 +8,9 @@
     "object": {
       "type": ["string", "null"]
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "account_holder_name": {
       "type": ["string", "null"]
     },

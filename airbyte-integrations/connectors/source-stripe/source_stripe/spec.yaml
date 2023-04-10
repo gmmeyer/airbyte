@@ -23,6 +23,12 @@ connectionSpecification:
         href="https://dashboard.stripe.com/apikeys">here</a>).
       airbyte_secret: true
       order: 1
+    org_id:
+      type: string
+      title: Org ID
+      description: >-
+        Bearworks Org ID
+      order: 1
     start_date:
       type: string
       title: Replication start date
@@ -33,7 +39,7 @@ connectionSpecification:
       examples:
         - "2017-01-25T00:00:00Z"
       format: date-time
-      order: 2
+      order: 3
     lookback_window_days:
       type: integer
       title: Lookback Window in days
@@ -44,7 +50,7 @@ connectionSpecification:
         where N is the value set here. This is useful if your data is frequently updated
         after creation. More info <a
         href="https://docs.airbyte.com/integrations/sources/stripe#requirements">here</a>
-      order: 3
+      order: 4
     slice_range:
       type: integer
       title: Data request time increment in days
@@ -55,4 +61,4 @@ connectionSpecification:
         The time increment used by the connector when requesting data from the Stripe API. The bigger the value is,
         the less requests will be made and faster the sync will be. On the other hand, the more seldom
         the state is persisted.
-      order: 4
+      order: 5

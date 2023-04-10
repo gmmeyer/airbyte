@@ -56,6 +56,7 @@ class SourceStripe(AbstractSource):
             "account_id": config["account_id"],
             "start_date": start_date,
             "slice_range": config.get("slice_range"),
+            "org_id": config.get("org_id"),
         }
         incremental_args = {**args, "lookback_window_days": config.get("lookback_window_days")}
         return [

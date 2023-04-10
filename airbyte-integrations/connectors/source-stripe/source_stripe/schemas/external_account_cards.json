@@ -8,6 +8,9 @@
     "object": {
       "type": ["string", "null"]
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "address_city": {
       "type": ["string", "null"]
     },

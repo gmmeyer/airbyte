@@ -16,6 +16,9 @@
         "type": ["null", "string"]
       }
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "caption": {
       "type": ["null", "string"]
     },

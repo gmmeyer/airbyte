@@ -60,6 +60,9 @@
     "trial_period_days": {
       "type": ["null", "integer"]
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "usage_type": {
       "type": ["null", "string"]
     },

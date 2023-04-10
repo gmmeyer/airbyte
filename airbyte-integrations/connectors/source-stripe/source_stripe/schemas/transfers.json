@@ -4,6 +4,9 @@
       "type": ["null", "object"],
       "properties": {}
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "reversals": {
       "type": ["null", "object"],
       "properties": {

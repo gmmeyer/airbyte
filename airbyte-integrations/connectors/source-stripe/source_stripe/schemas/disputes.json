@@ -4,6 +4,9 @@
     "id": {
       "type": ["string"]
     },
+    "org_id": {
+      "type": ["string"]
+    },
     "object": {
       "type": ["null", "string"]
     },
