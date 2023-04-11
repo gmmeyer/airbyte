@@ -13,6 +13,12 @@
     "coupon": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "id": { "type": ["null", "string"] },
         "amount_off": { "type": ["null", "integer"] },
         "currency": { "type": ["null", "string"] },
@@ -28,6 +34,12 @@
         "applies_to": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "products": {
               "type": ["null", "array"],
               "items": { "type": ["null", "string"] }
@@ -56,6 +68,12 @@
     "restrictions": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "first_time_transaction": { "type": ["null", "boolean"] },
         "minimum_amount": { "type": ["null", "integer"] },
         "minimum_amount_currency": { "type": ["null", "string"] }

@@ -21,6 +21,12 @@
       "items": {
         "type": ["null", "object"],
         "properties": {
+          "org_id": {
+            "type": ["string"]
+          },
+          "bearworks_source_id": {
+            "type": ["string"]
+          },
           "id": {
             "type": ["string"]
           }
@@ -39,6 +45,12 @@
     "evidence": {
       "type": ["null", "string", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "refund_policy": {
           "type": ["null", "string"]
         },
@@ -125,6 +137,12 @@
     "evidence_details": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "due_by": {
           "type": ["null", "number"]
         },

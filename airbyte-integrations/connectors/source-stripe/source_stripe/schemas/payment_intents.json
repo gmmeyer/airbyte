@@ -41,6 +41,12 @@
     "charges": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "object": {
           "type": ["null", "string"]
         },
@@ -83,6 +89,12 @@
     "last_payment_error": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "charge": {
           "type": ["null", "string"]
         },
@@ -104,6 +116,12 @@
         "payment_method": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "id": {
               "type": ["null", "string"]
             },
@@ -139,6 +157,12 @@
             "au_becs_debit": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "bsb_number": {
                   "type": ["null", "string"]
                 },
@@ -153,6 +177,12 @@
             "bacs_debit": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "fingerprint": {
                   "type": ["null", "string"]
                 },
@@ -170,9 +200,21 @@
             "billing_details": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "address": {
                   "type": ["null", "object"],
                   "properties": {
+                    "org_id": {
+                      "type": ["string"]
+                    },
+                    "bearworks_source_id": {
+                      "type": ["string"]
+                    },
                     "city": {
                       "type": ["null", "string"]
                     },
@@ -207,6 +249,12 @@
             "boleto": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "tax_id": {
                   "type": ["null", "string"]
                 }
@@ -215,12 +263,24 @@
             "card": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "brand": {
                   "type": ["null", "string"]
                 },
                 "checks": {
                   "type": ["null", "object"],
                   "properties": {
+                    "org_id": {
+                      "type": ["string"]
+                    },
+                    "bearworks_source_id": {
+                      "type": ["string"]
+                    },
                     "address_line1_check": {
                       "type": ["null", "string"]
                     },
@@ -250,15 +310,33 @@
                 "generated_from": {
                   "type": ["null", "object"],
                   "properties": {
+                    "org_id": {
+                      "type": ["string"]
+                    },
+                    "bearworks_source_id": {
+                      "type": ["string"]
+                    },
                     "charge": {
                       "type": ["null", "string"]
                     },
                     "payment_method_details": {
                       "type": ["null", "object"],
                       "properties": {
+                        "org_id": {
+                          "type": ["string"]
+                        },
+                        "bearworks_source_id": {
+                          "type": ["string"]
+                        },
                         "card_present": {
                           "type": ["null", "object"],
                           "properties": {
+                            "org_id": {
+                              "type": ["string"]
+                            },
+                            "bearworks_source_id": {
+                              "type": ["string"]
+                            },
                             "brand": {
                               "type": ["null", "string"]
                             },
@@ -306,6 +384,12 @@
                             "receipt": {
                               "type": ["null", "object"],
                               "properties": {
+                                "org_id": {
+                                  "type": ["string"]
+                                },
+                                "bearworks_source_id": {
+                                  "type": ["string"]
+                                },
                                 "account_type": {
                                   "type": ["null", "string"],
                                   "enum": [
@@ -362,6 +446,12 @@
                 "networks": {
                   "type": ["null", "object"],
                   "properties": {
+                    "org_id": {
+                      "type": ["string"]
+                    },
+                    "bearworks_source_id": {
+                      "type": ["string"]
+                    },
                     "available": {
                       "type": ["null", "array"],
                       "items": {
@@ -376,6 +466,12 @@
                 "three_d_secure_usage": {
                   "type": ["null", "object"],
                   "properties": {
+                    "org_id": {
+                      "type": ["string"]
+                    },
+                    "bearworks_source_id": {
+                      "type": ["string"]
+                    },
                     "supported": {
                       "type": ["null", "boolean"]
                     }
@@ -384,6 +480,12 @@
                 "wallet": {
                   "type": ["null", "object"],
                   "properties": {
+                    "org_id": {
+                      "type": ["string"]
+                    },
+                    "bearworks_source_id": {
+                      "type": ["string"]
+                    },
                     "amex_express_checkout": {
                       "type": ["null", "string"]
                     },
@@ -399,9 +501,21 @@
                     "masterpass": {
                       "type": ["null", "object"],
                       "properties": {
+                        "org_id": {
+                          "type": ["string"]
+                        },
+                        "bearworks_source_id": {
+                          "type": ["string"]
+                        },
                         "billing_address": {
                           "type": ["null", "object"],
                           "properties": {
+                            "org_id": {
+                              "type": ["string"]
+                            },
+                            "bearworks_source_id": {
+                              "type": ["string"]
+                            },
                             "city": {
                               "type": ["null", "string"]
                             },
@@ -431,6 +545,12 @@
                         "shipping_address": {
                           "type": ["null", "object"],
                           "properties": {
+                            "org_id": {
+                              "type": ["string"]
+                            },
+                            "bearworks_source_id": {
+                              "type": ["string"]
+                            },
                             "city": {
                               "type": ["null", "string"]
                             },
@@ -462,9 +582,21 @@
                     "visa_checkout": {
                       "type": ["null", "object"],
                       "properties": {
+                        "org_id": {
+                          "type": ["string"]
+                        },
+                        "bearworks_source_id": {
+                          "type": ["string"]
+                        },
                         "billing_address": {
                           "type": ["null", "object"],
                           "properties": {
+                            "org_id": {
+                              "type": ["string"]
+                            },
+                            "bearworks_source_id": {
+                              "type": ["string"]
+                            },
                             "city": {
                               "type": ["null", "string"]
                             },
@@ -494,6 +626,12 @@
                         "shipping_address": {
                           "type": ["null", "object"],
                           "properties": {
+                            "org_id": {
+                              "type": ["string"]
+                            },
+                            "bearworks_source_id": {
+                              "type": ["string"]
+                            },
                             "city": {
                               "type": ["null", "string"]
                             },
@@ -522,7 +660,14 @@
             },
             "card_present": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "created": {
               "type": ["null", "integer"]
@@ -533,6 +678,12 @@
             "eps": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "bank": {
                   "type": ["null", "string"],
                   "enum": [
@@ -570,6 +721,12 @@
             "fpx": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "bank": {
                   "type": ["null", "string"],
                   "enum": [
@@ -599,15 +756,35 @@
             },
             "giropay": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "grabpay": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "ideal": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "bank": {
                   "type": ["null", "string"],
                   "enum": [
@@ -630,7 +807,14 @@
             },
             "interac_present": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "livemode": {
               "type": ["null", "boolean"]
@@ -641,11 +825,24 @@
             },
             "oxxo": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "p24": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "bank": {
                   "type": ["null", "string"]
                 }
@@ -654,6 +851,12 @@
             "sepa_debit": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "bank_code": {
                   "type": ["null", "string"]
                 },
@@ -685,6 +888,12 @@
             "sofort": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "country": {
                   "type": ["null", "string"]
                 }
@@ -717,7 +926,14 @@
             },
             "wechat_pay": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             }
           }
         },
@@ -745,9 +961,21 @@
     "next_action": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "alipay_handle_redirect": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "native_data": {
               "type": ["null", "string"]
             },
@@ -765,6 +993,12 @@
         "boleto_display_details": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "expires_at": {
               "type": ["null", "integer"]
             },
@@ -782,6 +1016,12 @@
         "oxxo_display_details": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "expires_after": {
               "type": ["null", "integer"]
             },
@@ -796,6 +1036,12 @@
         "redirect_to_url": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "return_url": {
               "type": ["null", "string"]
             },
@@ -814,6 +1060,12 @@
         "verify_with_microdeposits": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "arrival_date": {
               "type": ["null", "integer"]
             },
@@ -825,6 +1077,12 @@
         "wechat_pay_display_qr_code": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "data": {
               "type": ["null", "string"]
             },
@@ -836,6 +1094,12 @@
         "wechat_pay_redirect_to_android_app": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "app_id": {
               "type": ["null", "string"]
             },
@@ -862,6 +1126,12 @@
         "wechat_pay_redirect_to_ios_app": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "native_url": {
               "type": ["null", "string"]
             }
@@ -897,9 +1167,21 @@
     "shipping": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "address": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "city": {
               "type": ["null", "string"]
             },
@@ -949,6 +1231,12 @@
     "transfer_data": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "amount": {
           "type": ["null", "integer"]
         },

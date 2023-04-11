@@ -36,6 +36,12 @@
     },
     "bank_account": {
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "metadata": {
           "type": ["null", "object"],
           "properties": {}

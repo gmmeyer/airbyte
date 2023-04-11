@@ -22,6 +22,12 @@
     "plan": {
       "type": ["null", "object", "string"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "nickname": {
           "type": ["null", "string"]
         },
@@ -30,6 +36,12 @@
           "items": {
             "type": ["null", "string", "object"],
             "properties": {
+              "org_id": {
+                "type": ["string"]
+              },
+              "bearworks_source_id": {
+                "type": ["string"]
+              },
               "flat_amount": {
                 "type": ["null", "integer"]
               },
@@ -134,7 +146,14 @@
     },
     "discount": {
       "type": ["null", "object"],
-      "properties": {}
+      "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        }
+      }
     },
     "application_fee_percent": {
       "type": ["null", "number"]

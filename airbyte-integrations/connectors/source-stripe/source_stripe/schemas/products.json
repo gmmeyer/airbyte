@@ -56,6 +56,12 @@
     "package_dimensions": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "width": {
           "type": ["null", "number"]
         },

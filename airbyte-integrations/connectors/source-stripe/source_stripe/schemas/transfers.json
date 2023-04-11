@@ -13,6 +13,12 @@
     "reversals": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "object": {
           "type": ["null", "string"]
         },

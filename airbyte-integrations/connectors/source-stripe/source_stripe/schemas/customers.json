@@ -20,6 +20,12 @@
     "invoice_settings": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "custom_fields": {
           "type": ["null", "array"],
           "items": {
@@ -52,6 +58,12 @@
     "address": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "city": {
           "type": ["null", "string"]
         },
@@ -75,9 +87,21 @@
     "shipping": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "address": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "line2": {
               "type": ["null", "string"]
             },
@@ -113,6 +137,12 @@
           "items": {
             "type": ["null", "object"],
             "properties": {
+              "org_id": {
+                "type": ["string"]
+              },
+              "bearworks_source_id": {
+                "type": ["string"]
+              },
               "metadata": {
                 "type": ["null", "object"],
                 "properties": {}
@@ -129,6 +159,12 @@
               "card": {
                 "type": ["null", "object"],
                 "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  },
                   "fingerprint": {
                     "type": ["null", "string"]
                   },
@@ -227,6 +263,12 @@
               "owner": {
                 "type": ["null", "object"],
                 "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  },
                   "verified_address": {
                     "type": ["null", "string"]
                   },
@@ -236,6 +278,12 @@
                   "address": {
                     "type": ["null", "object"],
                     "properties": {
+                      "org_id": {
+                        "type": ["string"]
+                      },
+                      "bearworks_source_id": {
+                        "type": ["string"]
+                      },
                       "line2": {
                         "type": ["null", "string"]
                       },
@@ -294,6 +342,12 @@
               "receiver": {
                 "type": ["null", "object"],
                 "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  },
                   "refund_attributes_method": {
                     "type": ["null", "string"]
                   },
@@ -323,6 +377,12 @@
               "ach_credit_transfer": {
                 "type": ["null", "object"],
                 "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  },
                   "bank_name": {
                     "type": ["null", "string"]
                   },
@@ -369,27 +429,68 @@
               },
               "alipay": {
                 "type": ["null", "object"],
-                "properties": {}
+                "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  }
+                }
               },
               "bancontact": {
                 "type": ["null", "object"],
-                "properties": {}
+                "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  }
+                }
               },
               "eps": {
                 "type": ["null", "object"],
-                "properties": {}
+                "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  }
+                }
               },
               "ideal": {
                 "type": ["null", "object"],
-                "properties": {}
+                "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  }
+                }
               },
               "multibanco": {
                 "type": ["null", "object"],
-                "properties": {}
+                "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  }
+                }
               },
               "redirect": {
                 "type": ["null", "object"],
                 "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  },
                   "failure_reason": {
                     "type": ["null", "string"]
                   },
@@ -410,6 +511,12 @@
         {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "metadata": {
               "type": ["null", "object"],
               "properties": {}
@@ -426,6 +533,12 @@
             "card": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "fingerprint": {
                   "type": ["null", "string"]
                 },
@@ -524,6 +637,12 @@
             "owner": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "verified_address": {
                   "type": ["null", "string"]
                 },
@@ -533,6 +652,12 @@
                 "address": {
                   "type": ["null", "object"],
                   "properties": {
+                    "org_id": {
+                      "type": ["string"]
+                    },
+                    "bearworks_source_id": {
+                      "type": ["string"]
+                    },
                     "line2": {
                       "type": ["null", "string"]
                     },
@@ -591,6 +716,12 @@
             "receiver": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "refund_attributes_method": {
                   "type": ["null", "string"]
                 },
@@ -620,6 +751,12 @@
             "ach_credit_transfer": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "bank_name": {
                   "type": ["null", "string"]
                 },
@@ -666,27 +803,68 @@
             },
             "alipay": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "bancontact": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "eps": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "ideal": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "multibanco": {
               "type": ["null", "object"],
-              "properties": {}
+              "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                }
+              }
             },
             "redirect": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "failure_reason": {
                   "type": ["null", "string"]
                 },
@@ -722,6 +900,12 @@
       "items": {
         "type": ["null", "object"],
         "properties": {
+          "org_id": {
+            "type": ["string"]
+          },
+          "bearworks_source_id": {
+            "type": ["string"]
+          },
           "metadata": {
             "type": ["null", "object"],
             "properties": {}
@@ -807,6 +991,12 @@
     "subscriptions": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "object": {
           "type": ["null", "string"]
         },
@@ -827,12 +1017,24 @@
     "discount": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "end": {
           "type": ["null", "integer"]
         },
         "coupon": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "metadata": {
               "type": ["null", "object"],
               "properties": {}

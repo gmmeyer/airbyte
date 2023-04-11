@@ -26,6 +26,12 @@
     "items": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "object": {
           "type": ["null", "string"]
         },
@@ -64,12 +70,24 @@
     "discount": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "end": {
           "type": ["null", "integer"]
         },
         "coupon": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "metadata": {
               "type": ["null", "object"],
               "properties": {}
@@ -141,6 +159,12 @@
     "plan": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "metadata": {
           "type": ["null", "object"],
           "properties": {}
@@ -171,6 +195,12 @@
           "items": {
             "type": ["null", "integer", "object"],
             "properties": {
+              "org_id": {
+                "type": ["string"]
+              },
+              "bearworks_source_id": {
+                "type": ["string"]
+              },
               "flat_amount": {
                 "type": ["null", "integer"]
               },

@@ -23,6 +23,12 @@
           "application": {
             "type": ["null", "string"]
           },
+          "org_id": {
+            "type": ["string"]
+          },
+          "bearworks_source_id": {
+            "type": ["string"]
+          },
           "type": {
             "type": ["null", "string"]
           },

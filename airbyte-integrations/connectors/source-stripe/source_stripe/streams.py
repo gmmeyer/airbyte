@@ -27,7 +27,9 @@ class StripeStream(HttpStream, ABC):
     primary_key = "id"
     DEFAULT_SLICE_RANGE = 365
 
-    def __init__(self, start_date: int, account_id: str, org_id: str, bearworks_source_id: str, slice_range: int = DEFAULT_SLICE_RANGE, **kwargs):
+    def __init__(
+        self, start_date: int, account_id: str, org_id: str, bearworks_source_id: str, slice_range: int = DEFAULT_SLICE_RANGE, **kwargs
+    ):
         super().__init__(**kwargs)
         self.account_id = account_id
         self.start_date = start_date
@@ -47,7 +49,6 @@ class StripeStream(HttpStream, ABC):
         stream_slice: Mapping[str, Any] = None,
         next_page_token: Mapping[str, Any] = None,
     ) -> MutableMapping[str, Any]:
-
         # Stripe default pagination is 10, max is 100
         params = {"limit": 100}
         for key in ("created[gte]", "created[lte]"):
@@ -97,8 +98,9 @@ class StripeStream(HttpStream, ABC):
 
         try:
             for record in super().read_records(sync_mode, cursor_field, stream_slice, stream_state):
-                record['org_id'] = self.org_id
-                record['bearworks_source_id'] = self.bearworks_source_id
+                record["org_id"] = self.org_id
+                record["bearworks_source_id"] = self.bearworks_source_id
+                record = self.insert_into_dict(record)
                 yield record
         except requests.exceptions.HTTPError as e:
             status_code = e.response.status_code
@@ -111,6 +113,21 @@ class StripeStream(HttpStream, ABC):
                 pass
             else:
                 self.logger.error(f"Syncing stream {self.name} is failed, due to {error_code}. Full message: {error_message}")
+
+    def insert_into_dict(self, d):
+        d["org_id"] = self.org_id
+        d["bearworks_source_id"] = self.bearworks_source_id
+        for k, v in d.items():
+            if isinstance(v, dict):
+                d[k] = self.insert_into_dict(v)
+            elif isinstance(v, list):
+                i = 0
+                for item in v:
+                    if isinstance(item, dict):
+                        v[i] = self.insert_into_dict(item)
+                    i += 1
+                d[k] = v
+        return d
 
 
 class IncrementalStripeStream(StripeStream, ABC):
@@ -208,7 +225,13 @@ class CustomerBalanceTransactions(StripeStream):
     def stream_slices(
         self, *, sync_mode: SyncMode, cursor_field: List[str] = None, stream_state: Mapping[str, Any] = None
     ) -> Iterable[Optional[Mapping[str, Any]]]:
-        parent_stream = Customers(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id, bearworks_source_id=self.bearworks_source_id)
+        parent_stream = Customers(
+            authenticator=self.authenticator,
+            account_id=self.account_id,
+            start_date=self.start_date,
+            org_id=self.org_id,
+            bearworks_source_id=self.bearworks_source_id,
+        )
         slices = parent_stream.stream_slices(sync_mode=SyncMode.full_refresh)
         for _slice in slices:
             for customer in parent_stream.read_records(sync_mode=SyncMode.full_refresh, stream_slice=_slice):
@@ -334,7 +357,13 @@ class StripeSubStream(StripeStream, ABC):
         return params
 
     def get_parent_stream_instance(self):
-        return self.parent(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id, bearworks_source_id=self.bearworks_source_id)
+        return self.parent(
+            authenticator=self.authenticator,
+            account_id=self.account_id,
+            start_date=self.start_date,
+            org_id=self.org_id,
+            bearworks_source_id=self.bearworks_source_id,
+        )
 
     def stream_slices(
         self, *, sync_mode: SyncMode, cursor_field: List[str] = None, stream_state: Mapping[str, Any] = None
@@ -342,7 +371,11 @@ class StripeSubStream(StripeStream, ABC):
         parent_stream = self.get_parent_stream_instance()
         slices = parent_stream.stream_slices(sync_mode=SyncMode.full_refresh)
         for _slice in slices:
-            yield from parent_stream.read_records(sync_mode=SyncMode.full_refresh, stream_slice=_slice)
+            for record in parent_stream.read_records(sync_mode=SyncMode.full_refresh, stream_slice=_slice):
+                record["org_id"] = self.org_id
+                record["bearworks_source_id"] = self.bearworks_source_id
+                record = self.insert_into_dict(record)
+                yield record
 
     def read_records(self, sync_mode: SyncMode, stream_slice: Optional[Mapping[str, Any]] = None, **kwargs) -> Iterable[Mapping[str, Any]]:
         parent_record = stream_slice
@@ -364,6 +397,9 @@ class StripeSubStream(StripeStream, ABC):
             if self.add_parent_id:
                 # add reference to parent object when item doesn't have it already
                 item[self.parent_id] = parent_record["id"]
+                item["org_id"] = self.org_id
+                item["bearworks_source_id"] = self.bearworks_source_id
+                item = self.insert_into_dict(item)
             yield item
 
 
@@ -591,7 +627,13 @@ class CheckoutSessionsLineItems(IncrementalStripeStream):
         checkout_session_state = None
         if stream_state:
             checkout_session_state = {"expires_at": stream_state["checkout_session_expires_at"]}
-        checkout_session_stream = CheckoutSessions(authenticator=self.authenticator, account_id=self.account_id, start_date=self.start_date, org_id=self.org_id, bearworks_source_id=self.bearworks_source_id)
+        checkout_session_stream = CheckoutSessions(
+            authenticator=self.authenticator,
+            account_id=self.account_id,
+            start_date=self.start_date,
+            org_id=self.org_id,
+            bearworks_source_id=self.bearworks_source_id,
+        )
         for checkout_session in checkout_session_stream.read_records(
             sync_mode=SyncMode.full_refresh, stream_state=checkout_session_state, stream_slice={}
         ):

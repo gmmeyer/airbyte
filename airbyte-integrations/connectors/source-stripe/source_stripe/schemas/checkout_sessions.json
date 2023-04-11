@@ -13,9 +13,21 @@
     "after_expiration": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "recovery": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "allow_promotion_codes": { "type": ["null", "boolean"] },
             "enabled": { "type": ["null", "boolean"] },
             "expires_at": { "type": ["null", "integer"] },
@@ -30,6 +42,12 @@
     "automatic_tax": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "enabled": { "type": ["null", "boolean"] },
         "status": { "type": ["null", "string"] }
       }
@@ -40,12 +58,24 @@
     "consent": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "promotions": { "type": ["null", "string"] }
       }
     },
     "consent_collection": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "promotions": { "type": ["null", "string"] }
       }
     },
@@ -54,6 +84,12 @@
     "customer_details": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "email": { "type": ["null", "string"] },
         "phone": { "type": ["null", "string"] },
         "tax_exempt": { "type": ["null", "string"] },
@@ -62,6 +98,12 @@
           "items": {
             "type": ["null", "object"],
             "properties": {
+              "org_id": {
+                "type": ["string"]
+              },
+              "bearworks_source_id": {
+                "type": ["string"]
+              },
               "type": { "type": ["null", "string"] },
               "value": { "type": ["null", "string"] }
             }
@@ -82,13 +124,31 @@
     "payment_method_options": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "acss_debit": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "currency": { "type": ["null", "string"] },
             "mandate_options": {
               "type": ["null", "object"],
               "properties": {
+                "org_id": {
+                  "type": ["string"]
+                },
+                "bearworks_source_id": {
+                  "type": ["string"]
+                },
                 "custom_mandate_url": { "type": ["null", "string"] },
                 "default_for": {
                   "type": ["null", "array"],
@@ -107,12 +167,24 @@
         "boleto": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "expires_after_days": { "type": ["null", "integer"] }
           }
         },
         "oxxo": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "expires_after_days": { "type": ["null", "integer"] }
           }
         }
@@ -128,6 +200,12 @@
     "phone_number_collection": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "enabled": { "type": ["null", "boolean"] }
       }
     },
@@ -136,9 +214,21 @@
     "shipping": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "address": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "city": { "type": ["null", "string"] },
             "country": { "type": ["null", "string"] },
             "line1": { "type": ["null", "string"] },
@@ -153,6 +243,12 @@
     "shipping_address_collection": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "allowed_countries": {
           "type": ["null", "array"],
           "items": {
@@ -167,27 +263,58 @@
     "tax_id_collection": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "enabled": { "type": ["null", "boolean"] }
       }
     },
     "total_details": {
       "type": ["null", "object"],
       "properties": {
+        "org_id": {
+          "type": ["string"]
+        },
+        "bearworks_source_id": {
+          "type": ["string"]
+        },
         "amount_discount": { "type": ["null", "integer"] },
         "amount_shipping": { "type": ["null", "integer"] },
         "amount_tax": { "type": ["null", "integer"] },
         "breakdown": {
           "type": ["null", "object"],
           "properties": {
+            "org_id": {
+              "type": ["string"]
+            },
+            "bearworks_source_id": {
+              "type": ["string"]
+            },
             "discounts": {
               "type": ["null", "array"],
               "items": {
                 "type": ["null", "object"],
                 "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  },
                   "amount": { "type": ["null", "integer"] },
                   "discount": {
                     "type": ["null", "object"],
-                    "properties": {}
+                    "properties": {
+                      "org_id": {
+                        "type": ["string"]
+                      },
+                      "bearworks_source_id": {
+                        "type": ["string"]
+                      }
+                    }
                   }
                 }
               }
@@ -197,10 +324,22 @@
               "items": {
                 "type": ["null", "object"],
                 "properties": {
+                  "org_id": {
+                    "type": ["string"]
+                  },
+                  "bearworks_source_id": {
+                    "type": ["string"]
+                  },
                   "amount": { "type": ["null", "integer"] },
                   "rate": {
                     "type": ["null", "object"],
                     "properties": {
+                      "org_id": {
+                        "type": ["string"]
+                      },
+                      "bearworks_source_id": {
+                        "type": ["string"]
+                      },
                       "id": { "type": ["null", "string"] },
                       "object": { "type": ["null", "string"] },
                       "active": { "type": ["null", "boolean"] },

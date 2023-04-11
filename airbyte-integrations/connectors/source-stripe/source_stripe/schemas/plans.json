@@ -1,6 +1,7 @@
 {
   "type": ["null", "object", "string"],
   "properties": {
+
     "nickname": {
       "type": ["null", "string"]
     },
@@ -9,6 +10,12 @@
       "items": {
         "type": ["null", "string", "object"],
         "properties": {
+          "org_id": {
+            "type": ["string"]
+          },
+          "bearworks_source_id": {
+            "type": ["string"]
+          },
           "flat_amount": {
             "type": ["null", "integer"]
           },
